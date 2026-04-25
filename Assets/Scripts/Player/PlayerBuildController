@@ -1,0 +1,84 @@
+using UnityEngine;
+
+public class PlayerBuildController : MonoBehaviour
+{
+    [Header("Build Settings")]
+    public GameObject[] buildPrefabs; // Turret, wall, trap, etc.
+    public float buildRange = 5f;
+    public LayerMask groundMask;
+
+    [Header("Preview Settings")]
+    public Material previewMaterial;
+    private GameObject previewObject;
+    private int currentIndex = 0;
+
+    Camera cam;
+
+    void Start()
+    {
+        cam = Camera.main;
+        CreatePreview();
+    }
+
+    void Update()
+    {
+        HandleBuildSelection();
+        UpdatePreviewPosition();
+
+        if (Input.GetMouseButtonDown(0))
+            PlaceStructure();
+    }
+
+    void HandleBuildSelection()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+            currentIndex = (currentIndex + 1) % buildPrefabs.Length;
+            CreatePreview();
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            currentIndex--;
+            if (currentIndex < 0) currentIndex = buildPrefabs.Length - 1;
+            CreatePreview();
+        }
+    }
+
+    void CreatePreview()
+    {
+        if (previewObject != null)
+            Destroy(previewObject);
+
+        previewObject = Instantiate(buildPrefabs[currentIndex]);
+        SetPreviewMaterial(previewObject);
+    }
+
+    void SetPreviewMaterial(GameObject obj)
+    {
+        foreach (Renderer r in obj.GetComponentsInChildren<Renderer>())
+        {
+            r.material = previewMaterial;
+        }
+    }
+
+    void UpdatePreviewPosition()
+    {
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, buildRange, groundMask))
+        {
+            previewObject.SetActive(true);
+            previewObject.transform.position = hit.point;
+        }
+        else
+        {
+            previewObject.SetActive(false);
+        }
+    }
+
+    void PlaceStructure()
+    {
+        if (!previewObject.activeSelf)
+            return;
+
+        Instantiate(buildPrefabs[currentIndex], previewObject.transform.position, previewObject.transform.rotation);
+    }
+}
