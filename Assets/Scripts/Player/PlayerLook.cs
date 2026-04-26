@@ -1,10 +1,10 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerLook : MonoBehaviour
 {
-    public float sensitivity = 200f;
+    public float sensitivity = 0.1f;
     public Transform playerBody;
-
     float xRotation = 0f;
 
     void Start()
@@ -14,12 +14,12 @@ public class PlayerLook : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        Vector2 mouseDelta = Mouse.current.delta.ReadValue();
+        float mouseX = mouseDelta.x * sensitivity;
+        float mouseY = mouseDelta.y * sensitivity;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
-
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
     }

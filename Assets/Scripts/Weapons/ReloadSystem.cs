@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ReloadSystem : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class ReloadSystem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !isReloading)
+        if (Keyboard.current.rKey.wasPressedThisFrame && !isReloading)
             StartCoroutine(ReloadRoutine());
     }
 
@@ -16,7 +17,6 @@ public class ReloadSystem : MonoBehaviour
     {
         isReloading = true;
         yield return new WaitForSeconds(reloadTime);
-
         weapon.Reload();
         isReloading = false;
     }
