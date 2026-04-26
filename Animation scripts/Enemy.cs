@@ -1,8 +1,17 @@
-
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // -----------------------------
+    // GLOBAL DIFFICULTY MULTIPLIERS
+    // -----------------------------
+    public static float globalHealthMultiplier = 1f;
+    public static float globalDamageMultiplier = 1f;
+    public static float globalSpeedMultiplier = 1f;
+
+    // -----------------------------
+    // INSPECTOR STATS
+    // -----------------------------
     [Header("Stats")]
     public float health = 50f;
     public float moveSpeed = 2.5f;
@@ -17,20 +26,32 @@ public class Enemy : MonoBehaviour
     public float spinSpeed = 720f;
     public float deathDelay = 1f;
 
+    // -----------------------------
+    // INTERNALS
+    // -----------------------------
     private Transform player;
     private Rigidbody rb;
     private bool isGrounded = true;
     private bool isRecovering = false;
 
+    // -----------------------------
+    // UNITY METHODS
+    // -----------------------------
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
+
+        // APPLY DIFFICULTY SCALING
+        health *= globalHealthMultiplier;
+        moveSpeed *= globalSpeedMultiplier;
+        damage *= globalDamageMultiplier;
     }
 
     void Update()
     {
-        if (player == null || isRecovering) return;
+        if (player == null || isRecovering) 
+            return;
 
         float distance = Vector3.Distance(transform.position, player.position);
 
@@ -44,6 +65,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // -----------------------------
+    // MOVEMENT
+    // -----------------------------
     void WalkTowardPlayer()
     {
         Vector3 direction = (player.position - transform.position).normalized;
@@ -64,6 +88,9 @@ public class Enemy : MonoBehaviour
         rb.AddForce(dir * forwardForce + Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
+    // -----------------------------
+    // COLLISIONS
+    // -----------------------------
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -83,9 +110,13 @@ public class Enemy : MonoBehaviour
         isRecovering = false;
     }
 
+    // -----------------------------
+    // DAMAGE + DEATH
+    // -----------------------------
     public void TakeDamage(float dmg)
     {
         health -= dmg;
+
         if (health <= 0)
             StartCoroutine(DeathSpin());
     }
