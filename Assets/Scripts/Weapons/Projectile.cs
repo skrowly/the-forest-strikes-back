@@ -18,11 +18,11 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out EnemyHealth enemy))
-        {
-            enemy.TakeDamage(damage);
-        }
+        //if (other.TryGetComponent(out EnemyHealth enemy))
+        //{
+            ////enemy.TakeDamage(damage);
+        //}
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

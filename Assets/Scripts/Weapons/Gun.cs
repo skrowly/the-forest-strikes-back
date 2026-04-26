@@ -13,10 +13,10 @@ public class Gun : WeaponBase
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, stats.range))
         {
-            if (hit.collider.TryGetComponent(out EnemyHealth enemy))
-            {
-                enemy.TakeDamage(stats.damage);
-            }
+            //if (hit.collider.TryGetComponent(out EnemyHealth enemy))
+            //{
+               // enemy.TakeDamage(stats.damage);
+            //}
         }
     }
 

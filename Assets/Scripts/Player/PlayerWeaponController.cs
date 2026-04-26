@@ -18,14 +18,14 @@ public class PlayerWeaponController : MonoBehaviour
         }
     }
 
-    void Shoot()
+   void Shoot()
     {
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, range))
         {
-            if (hit.collider.TryGetComponent(out EnemyHealth enemy))
-            {
-                enemy.TakeDamage(damage);
-            }
+            //if (hit.collider.TryGetComponent(out EnemyHealth enemy))
+            //{
+               // enemy.TakeDamage(damage);
+            //}
         }
     }
 }
