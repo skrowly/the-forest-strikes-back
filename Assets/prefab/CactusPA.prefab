@@ -69,6 +69,7 @@ Transform:
   m_Children:
   - {fileID: 244106430819644996}
   - {fileID: 7804328261524909692}
+  - {fileID: 729616908227037172}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 16.464}
 --- !u!95 &6739089667248292912
@@ -172,8 +173,8 @@ MonoBehaviour:
   attackRange: 2
   isJumper: 0
   isShooter: 1
-  projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 0}
+  projectilePrefab: {fileID: 4952667480916225906, guid: 7fb3361566938a945abed5de1918ec4a, type: 3}
+  firePoint: {fileID: 729616908227037172}
   shootCooldown: 2
   jumpForce: 5
 --- !u!114 &7664957652771182414
@@ -189,6 +190,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   baseHealth: 15
+--- !u!1 &838968239610765178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 729616908227037172}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &729616908227037172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838968239610765178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.01, y: 0.47, z: 0.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7526783659079932847}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492824899473291426
 GameObject:
   m_ObjectHideFlags: 0

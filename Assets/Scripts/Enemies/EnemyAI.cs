@@ -60,9 +60,18 @@ public class EnemyAI : MonoBehaviour
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
     }
 
+    private float nextDamageTime = 0f;
+    public float damageCooldown = 1f;
+
     void OnCollisionEnter(Collision collision)
     {
-        if (isJumper && collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && Time.time >= nextDamageTime)
+        {
             collision.gameObject.GetComponent<PlayerHealth>()?.TakeDamage(currentDamage * globalDamageMultiplier);
+            nextDamageTime = Time.time + damageCooldown;
+        }
     }
+
+
+
 }
