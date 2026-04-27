@@ -171,7 +171,7 @@ MonoBehaviour:
   baseSpeed: 3
   attackRange: 2
   isJumper: 0
-  isShooter: 0
+  isShooter: 1
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
   shootCooldown: 2

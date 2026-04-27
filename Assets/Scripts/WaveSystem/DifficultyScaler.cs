@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class DifficultyScaler : MonoBehaviour
 {
-    public float healthMultiplier = 1.15f;
-    public float damageMultiplier = 1.1f;
-    public float speedMultiplier = 1.05f;
+    public float healthMultiplier = 1.05f;   // was 1.15
+    public float damageMultiplier = 1.02f;   // was 1.1
+    public float speedMultiplier = 1.01f;    // was 1.05
 
     void OnEnable()
     {

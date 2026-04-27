@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -7,11 +8,8 @@ public class WaveManager : MonoBehaviour
 
     [Header("Wave Settings")]
     public float timeBetweenWaves = 10f;
-    public int startingEnemies = 5;
-    public float waveMultiplier = 1.3f;
 
     private int currentWave = 0;
-    private bool waveActive = false;
 
     public delegate void WaveEvent(int wave);
     public static event WaveEvent OnWaveStarted;
@@ -24,24 +22,25 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator WaveRoutine()
     {
-        while (true)
+        while (currentWave < 3)
         {
             yield return new WaitForSeconds(timeBetweenWaves);
-
             currentWave++;
-            waveActive = true;
+
             OnWaveStarted?.Invoke(currentWave);
+            spawner.SpawnLevel(currentWave);
 
-            int enemyCount = Mathf.RoundToInt(startingEnemies * Mathf.Pow(waveMultiplier, currentWave - 1));
-            spawner.SpawnWave(enemyCount);
-
-            // Wait until all enemies are dead
+            // wait until all enemies are dead
             while (spawner.ActiveEnemyCount > 0)
                 yield return null;
 
-            waveActive = false;
             OnWaveEnded?.Invoke(currentWave);
+
+            // after wave 3 player wins
+            if (currentWave >= 3)
+            {
+                SceneManager.LoadScene("WinScene");
+            }
         }
     }
 }
-

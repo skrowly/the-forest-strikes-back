@@ -544,7 +544,7 @@ MonoBehaviour:
   baseDamage: 5
   baseSpeed: 3
   attackRange: 2
-  isJumper: 0
+  isJumper: 1
   isShooter: 0
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
