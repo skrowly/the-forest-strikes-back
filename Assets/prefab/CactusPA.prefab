@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3610434418378674403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1845073685719547914}
   - component: {fileID: 4466245425642353002}
   - component: {fileID: 7664957652771182414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CactusPA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 729616908227037172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7128532527130489908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_spine03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4505547931134100597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_rightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4864655046923008539}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_spine02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3913844181018226356}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_rightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 931177893594087760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_leftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3638047189433136896}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4582209096705378999}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_leftUpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 244106430819644996}
   - component: {fileID: 2322437432691739482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cactus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6059152132650352498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_rightLowerArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7839237455547750208}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_headDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1507677710398377711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_leftHandTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7804328261524909692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 494771935216237046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_rightHandTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,7 +726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7343385279888435406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7781701934183683270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_leftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6917837561024772990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +820,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5141878735446327449}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_leftLowerArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9149460570584145676}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_rightUpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

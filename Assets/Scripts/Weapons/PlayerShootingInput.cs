@@ -75,14 +75,18 @@ public class PlayerShootingInput : MonoBehaviour
 
     void Update()
     {
-        if (Mouse.current.leftButton.isPressed)
+        //left click OR spacebar to fire -- will make it easier if you dont have mouse and just touch pad
+        if (Mouse.current.leftButton.isPressed ||
+            Keyboard.current.spaceKey.isPressed)
+        {
             activeWeapon?.Fire();
+        }
 
-        // 1 = gun, 2 = melee
         if (Keyboard.current.digit1Key.wasPressedThisFrame)
             SwitchToGun();
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
             SwitchToMelee();
+
     }
 
     void SwitchToGun()
