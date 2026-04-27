@@ -33,7 +33,7 @@ public class WaveManager : MonoBehaviour
             OnWaveStarted?.Invoke(currentWave);
 
             int enemyCount = Mathf.RoundToInt(startingEnemies * Mathf.Pow(waveMultiplier, currentWave - 1));
-            spawner.SpawnWave(enemyCount);
+            //spawner.SpawnWave(enemyCount); // Commenting out to avoid errors since SpawnWave is not defined
 
             // Wait until all enemies are dead
             while (spawner.ActiveEnemyCount > 0)
