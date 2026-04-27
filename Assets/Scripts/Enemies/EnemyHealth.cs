@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = baseHealth * globalHealthMultiplier;
+        Debug.Log(gameObject.name + " health set to: " + currentHealth);
     }
 
     public void TakeDamage(float amount)

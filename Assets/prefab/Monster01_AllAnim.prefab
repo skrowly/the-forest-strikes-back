@@ -138,12 +138,13 @@ MonoBehaviour:
   baseDamage: 32
   baseSpeed: 3
   attackRange: 2
-  isJumper: 1
+  isJumper: 0
   isShooter: 1
   projectilePrefab: {fileID: 4952667480916225906, guid: 7fb3361566938a945abed5de1918ec4a, type: 3}
   firePoint: {fileID: 638857147961670213}
   shootCooldown: 2
-  jumpForce: 5
+  jumpForce: 3
+  damageCooldown: 1
 --- !u!114 &307840531321756828
 MonoBehaviour:
   m_ObjectHideFlags: 0

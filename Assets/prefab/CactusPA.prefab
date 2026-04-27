@@ -177,6 +177,7 @@ MonoBehaviour:
   firePoint: {fileID: 729616908227037172}
   shootCooldown: 2
   jumpForce: 5
+  damageCooldown: 1
 --- !u!114 &7664957652771182414
 MonoBehaviour:
   m_ObjectHideFlags: 0

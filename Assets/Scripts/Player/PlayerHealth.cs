@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        SceneManager.LoadScene("GameOverScene");
+        Debug.Log("Player died loading Deathscene-Lose");
+        SceneManager.LoadScene("Deathscene-Lose");
     }
 }

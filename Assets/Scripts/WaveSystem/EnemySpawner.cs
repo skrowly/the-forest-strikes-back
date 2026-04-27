@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Spawn Settings")]
     public Transform[] spawnPoints;
-    public float timeBetweenSpawns = 1.5f;
+    public float timeBetweenSpawns = 0.3f;
 
     private List<GameObject> activeEnemies = new List<GameObject>();
     public int ActiveEnemyCount => activeEnemies.Count;
@@ -71,6 +71,7 @@ public class EnemySpawner : MonoBehaviour
         Transform spawn = spawnPoints[Random.Range(0, spawnPoints.Length)];
         GameObject enemy = Instantiate(prefab, spawn.position, spawn.rotation);
         activeEnemies.Add(enemy);
+        Debug.Log("Spawned: " + prefab.name + " total active: " + activeEnemies.Count);
 
         EnemyHealth health = enemy.GetComponent<EnemyHealth>();
         if (health != null)

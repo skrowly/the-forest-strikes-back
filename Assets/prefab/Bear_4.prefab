@@ -1013,7 +1013,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4952667480916225906, guid: 7fb3361566938a945abed5de1918ec4a, type: 3}
   firePoint: {fileID: 0}
   shootCooldown: 2
-  jumpForce: 5
+  jumpForce: 3
+  damageCooldown: 1
 --- !u!114 &4966716124903167238
 MonoBehaviour:
   m_ObjectHideFlags: 0
