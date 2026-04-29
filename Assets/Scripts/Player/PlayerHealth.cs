@@ -17,6 +17,12 @@ public class PlayerHealth : MonoBehaviour
             healthBar.value = currentHealth;
         }
     }
+    //to reset health after each wave
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        if (healthBar != null) healthBar.value = currentHealth;
+    }
 
     public void TakeDamage(float amount)
     {

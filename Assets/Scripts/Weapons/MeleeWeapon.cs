@@ -74,9 +74,13 @@ public class MeleeWeapon : WeaponBase
 
         foreach (Collider hit in hits)
         {
+            // make sure we're not hitting ourselves
+            if (hit.transform.root == transform.root) continue;
+
             if (hit.TryGetComponent(out EnemyHealth enemy))
             {
                 enemy.TakeDamage(stats.damage);
+                Debug.Log("Melee hit: " + hit.gameObject.name);
             }
         }
     }

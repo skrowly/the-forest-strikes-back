@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Spawn Settings")]
     public Transform[] spawnPoints;
-    public float timeBetweenSpawns = 2.5f;
+    public float timeBetweenSpawns = 3.5f;
 
     private List<GameObject> activeEnemies = new List<GameObject>();
     public int ActiveEnemyCount => activeEnemies.Count;

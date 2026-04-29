@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0e20f6bd161f84180048958ee1620b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  baseDamage: 32
+  baseDamage: 15
   baseSpeed: 3
   attackRange: 2
   isJumper: 0

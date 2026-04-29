@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
+    public PlayerHealth playerHealth;
     public EnemySpawner spawner;
 
     [Header("Wave Settings")]
@@ -28,10 +29,14 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenWaves);
             currentWave++;
 
+            //reset health before wave starts
+            if (playerHealth != null)
+                playerHealth.ResetHealth();
+
             OnWaveStarted?.Invoke(currentWave);
             spawner.SpawnLevel(currentWave);
 
-            // wait until all enemies are dead
+            //wait until all enemies are dead
             while (spawner.ActiveEnemyCount > 0)
                 yield return null;
 

@@ -6,17 +6,15 @@ public class Gun : WeaponBase
     private LineRenderer lineRenderer;
     public float lineDuration = 0.05f;
 
-    void Start()
-    {
-        //to see shooting as laser image
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.startWidth = 0.02f;
-        lineRenderer.endWidth = 0.02f;
-        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = Color.yellow;
-        lineRenderer.endColor = Color.yellow;
-        lineRenderer.enabled = false;
-    }
+    void Start() {
+    lineRenderer = gameObject.AddComponent<LineRenderer>();
+    lineRenderer.startWidth = 0.1f;    // thicker
+    lineRenderer.endWidth = 0.05f;     // tapers at end
+    lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+    lineRenderer.startColor = Color.cyan;   // bright cyan
+    lineRenderer.endColor = Color.white;    // fades to white
+    lineRenderer.enabled = false;
+}
 
     public override void Fire()
     {

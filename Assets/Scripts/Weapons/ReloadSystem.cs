@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//no longer in use - decided reloading was too complex for game and game player infinite bullets
 public class ReloadSystem : MonoBehaviour
 {
     public WeaponBase weapon;
