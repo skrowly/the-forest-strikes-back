@@ -1,0 +1,43 @@
+using UnityEngine;
+
+public class HealingItem : MonoBehaviour
+{
+    [Header("Healing Settings")]
+    public float healAmount = 25f;
+    public bool destroyOnUse = true;
+    public AudioClip pickupSound;
+
+    private bool used = false;
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (used) return;
+
+        if (other.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+
+            if (playerHealth != null)
+            {
+                bool healed = playerHealth.Heal(healAmount);
+
+                if (healed)
+                {
+                    used = true;
+                    PlayPickupSound();
+
+                    if (destroyOnUse)
+                        Destroy(gameObject);
+                }
+            }
+        }
+    }
+
+    void PlayPickupSound()
+    {
+        if (pickupSound != null)
+        {
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+        }
+    }
+}
