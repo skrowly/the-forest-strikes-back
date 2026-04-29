@@ -16,6 +16,8 @@ public class PlayerShootingInput : MonoBehaviour
 
     private WeaponBase activeWeapon;
 
+
+
     void OnEnable()
     {
         WaveManager.OnWaveStarted += HandleWaveUpgrade;
@@ -41,31 +43,25 @@ public class PlayerShootingInput : MonoBehaviour
     {
         DisableAll();
         basicGun?.gameObject.SetActive(true);
-        basicKnife?.gameObject.SetActive(true);
+        basicKnife?.gameObject.SetActive(false); // start with gun visible
         activeWeapon = basicGun;
-        Debug.Log("Wave 1 loadout: Basic Gun + Basic Knife");
     }
-
     void SetupWave2()
     {
         DisableAll();
         upgradedGun?.gameObject.SetActive(true);
-        basicKnife?.gameObject.SetActive(true);
         activeWeapon = upgradedGun;
-        Debug.Log("Wave 2 loadout: Upgraded Gun + Basic Knife");
     }
-
     void SetupWave3()
     {
         DisableAll();
         eliteGun?.gameObject.SetActive(true);
-        powerSword?.gameObject.SetActive(true);
         activeWeapon = eliteGun;
-        Debug.Log("Wave 3 loadout: Elite Gun + Power Sword");
     }
 
     void DisableAll()
     {
+        // disable entire game object including visual
         basicGun?.gameObject.SetActive(false);
         basicKnife?.gameObject.SetActive(false);
         upgradedGun?.gameObject.SetActive(false);
@@ -91,24 +87,47 @@ public class PlayerShootingInput : MonoBehaviour
 
     void SwitchToGun()
     {
-        // picks whichever gun is currently active for this wave
+        // hide all melee show only active gun
+        basicKnife?.gameObject.SetActive(false);
+        powerSword?.gameObject.SetActive(false);
+
         if (eliteGun != null && eliteGun.gameObject.activeSelf)
+        {
             activeWeapon = eliteGun;
+            eliteGun.gameObject.SetActive(true);
+        }
         else if (upgradedGun != null && upgradedGun.gameObject.activeSelf)
+        {
             activeWeapon = upgradedGun;
+            upgradedGun.gameObject.SetActive(true);
+        }
         else
+        {
             activeWeapon = basicGun;
+            basicGun?.gameObject.SetActive(true);
+        }
+        Debug.Log("Switched to gun: " + activeWeapon?.name);
     }
 
     void SwitchToMelee()
     {
-        // picks whichever melee is active for this wave
-        if (powerSword != null && powerSword.gameObject.activeSelf)
-            activeWeapon = powerSword;
-        else
-            activeWeapon = basicKnife;
-    }
+        //hides gun show only active melee
+        basicGun?.gameObject.SetActive(false);
+        upgradedGun?.gameObject.SetActive(false);
+        eliteGun?.gameObject.SetActive(false);
 
+        if (powerSword != null && powerSword.gameObject.activeSelf)
+        {
+            activeWeapon = powerSword;
+            powerSword.gameObject.SetActive(true);
+        }
+        else
+        {
+            activeWeapon = basicKnife;
+            basicKnife?.gameObject.SetActive(true);
+        }
+        Debug.Log("Switched to melee: " + activeWeapon?.name);
+    }
     public WeaponBase GetActiveWeapon()
     {
         return activeWeapon;
