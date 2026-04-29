@@ -18,6 +18,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(WaveRoutine());
+        currentWave = GameData.startingWave - 1;
     }
 
     IEnumerator WaveRoutine()

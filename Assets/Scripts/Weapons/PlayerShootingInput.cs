@@ -30,7 +30,13 @@ public class PlayerShootingInput : MonoBehaviour
 
     void Start()
     {
-        SetupWave1();
+        //so it starts with correct wave loadout now that we can select levels
+        if (GameData.startingWave == 1)
+            SetupWave1();
+        else if (GameData.startingWave == 2)
+            SetupWave2();
+        else if (GameData.startingWave == 3)
+            SetupWave3();
     }
 
     void HandleWaveUpgrade(int wave)

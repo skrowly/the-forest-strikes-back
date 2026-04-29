@@ -8,6 +8,14 @@ public class SceneLoader : MonoBehaviour
         GameData.startingWave = 1;
         SceneManager.LoadScene("GameScene");
     }
+    public void Controls()
+    {
+        SceneManager.LoadScene("Controls");
+    }
+    public void LevelSelection()
+    {
+        SceneManager.LoadScene("LevelSelection");
+    }
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("IntroScene");
@@ -21,6 +29,7 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Legend");
     }
+    //this is just for being able to load each level - wave
     public void TestWave1()
     {
         GameData.startingWave = 1;
