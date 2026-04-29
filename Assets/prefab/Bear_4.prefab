@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 8686279787436460531}
   m_Layer: 6
   m_Name: Bear_4
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1014,8 +1014,11 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4952667480916225906, guid: 7fb3361566938a945abed5de1918ec4a, type: 3}
   firePoint: {fileID: 0}
   shootCooldown: 2
-  jumpForce: 3
-  damageCooldown: 1
+  jumpForce: 2
+  jumpCooldown: 3
+  minJumpDistance: 1.5
+  maxJumpDistance: 4
+  damageCooldown: 3
 --- !u!114 &4966716124903167238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,7 +1043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ed059fb338d9d49b04e47e8122ddbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  baseHealth: 60
+  baseHealth: 80
 --- !u!136 &317253971041476513
 CapsuleCollider:
   m_ObjectHideFlags: 0

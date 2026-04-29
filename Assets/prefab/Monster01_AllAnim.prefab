@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0392ad5188ec61545b5b7f77789a7dfb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 945743962379790649, guid: 0392ad5188ec61545b5b7f77789a7dfb, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -478,8 +482,11 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4952667480916225906, guid: 7fb3361566938a945abed5de1918ec4a, type: 3}
   firePoint: {fileID: 638857147961670213}
   shootCooldown: 2
-  jumpForce: 3
-  damageCooldown: 1
+  jumpForce: 2
+  jumpCooldown: 3
+  minJumpDistance: 1.5
+  maxJumpDistance: 4
+  damageCooldown: 2
 --- !u!114 &307840531321756828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ed059fb338d9d49b04e47e8122ddbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  baseHealth: 55
+  baseHealth: 70
 --- !u!136 &4830939837522075894
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -18,7 +18,8 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Spawn Settings")]
     public Transform[] spawnPoints;
-    public float timeBetweenSpawns = 3.5f;
+    public float timeBetweenGroups = 5f;
+    public int enemiesPerGroup = 2;
 
     private List<GameObject> activeEnemies = new List<GameObject>();
     public int ActiveEnemyCount => activeEnemies.Count;
@@ -27,14 +28,14 @@ public class EnemySpawner : MonoBehaviour
     {
         if (level == 1)
         {
-            StartCoroutine(SpawnRoutine(new GameObject[] {
+            StartCoroutine(SpawnInGroups(new GameObject[] {
                 animal1Prefab, animal1Prefab, animal1Prefab,
                 animal2Prefab, animal2Prefab
             }));
         }
         else if (level == 2)
         {
-            StartCoroutine(SpawnRoutine(new GameObject[] {
+            StartCoroutine(SpawnInGroups(new GameObject[] {
                 animal1Prefab, animal1Prefab, animal1Prefab, animal1Prefab,
                 animal2Prefab, animal2Prefab, animal2Prefab,
                 animal3Prefab, animal3Prefab,
@@ -43,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
         }
         else if (level == 3)
         {
-            StartCoroutine(SpawnRoutine(new GameObject[] {
+            StartCoroutine(SpawnInGroups(new GameObject[] {
                 animal1Prefab, animal1Prefab, animal1Prefab,
                 animal2Prefab, animal2Prefab, animal2Prefab,
                 animal3Prefab, animal3Prefab, animal3Prefab,
@@ -54,15 +55,26 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnRoutine(GameObject[] enemies)
+    IEnumerator SpawnInGroups(GameObject[] enemies)
     {
-        foreach (GameObject prefab in enemies)
+        int index = 0;
+
+        while (index < enemies.Length)
         {
-            if (prefab != null)
+            // spawn enemiesPerGroup at once
+            for (int i = 0; i < enemiesPerGroup && index < enemies.Length; i++)
             {
-                SpawnEnemy(prefab);
-                yield return new WaitForSeconds(timeBetweenSpawns);
+                if (enemies[index] != null)
+                {
+                    SpawnEnemy(enemies[index]);
+                }
+                index++;
             }
+
+            Debug.Log("Spawned group, total active: " + activeEnemies.Count);
+
+            //wait before next group
+            yield return new WaitForSeconds(timeBetweenGroups);
         }
     }
 
@@ -71,7 +83,6 @@ public class EnemySpawner : MonoBehaviour
         Transform spawn = spawnPoints[Random.Range(0, spawnPoints.Length)];
         GameObject enemy = Instantiate(prefab, spawn.position, spawn.rotation);
         activeEnemies.Add(enemy);
-        Debug.Log("Spawned: " + prefab.name + " total active: " + activeEnemies.Count);
 
         EnemyHealth health = enemy.GetComponent<EnemyHealth>();
         if (health != null)

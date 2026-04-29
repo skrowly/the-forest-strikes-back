@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 8561754438868538514}
   m_Layer: 6
   m_Name: MoleRatCreature
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -490,8 +490,11 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
   shootCooldown: 2
-  jumpForce: 3
-  damageCooldown: 1
+  jumpForce: 2
+  jumpCooldown: 3
+  minJumpDistance: 1.5
+  maxJumpDistance: 4
+  damageCooldown: 2
 --- !u!114 &5507625116160860704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ed059fb338d9d49b04e47e8122ddbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  baseHealth: 35
+  baseHealth: 40
 --- !u!82 &8561754438868538514
 AudioSource:
   m_ObjectHideFlags: 0

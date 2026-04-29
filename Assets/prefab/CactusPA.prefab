@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 2928501833277949540}
   m_Layer: 6
   m_Name: CactusPA
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0e20f6bd161f84180048958ee1620b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  baseDamage: 1
+  baseDamage: 2
   baseSpeed: 3
   attackRange: 2
   isJumper: 0
@@ -177,8 +177,11 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4952667480916225906, guid: 7fb3361566938a945abed5de1918ec4a, type: 3}
   firePoint: {fileID: 729616908227037172}
   shootCooldown: 2
-  jumpForce: 5
-  damageCooldown: 2
+  jumpForce: 3
+  jumpCooldown: 3
+  minJumpDistance: 1.5
+  maxJumpDistance: 4
+  damageCooldown: 3
 --- !u!114 &7664957652771182414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ed059fb338d9d49b04e47e8122ddbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  baseHealth: 15
+  baseHealth: 20
 --- !u!82 &2928501833277949540
 AudioSource:
   m_ObjectHideFlags: 0
