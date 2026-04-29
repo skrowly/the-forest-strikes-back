@@ -25,7 +25,7 @@ public class MeleeWeapon : WeaponBase
         // swing forward
         float elapsed = 0f;
         Quaternion startRot = transform.localRotation;
-        Quaternion endRot = startRot * Quaternion.Euler(-swingAngle, 0, 0);
+        Quaternion endRot = startRot * Quaternion.Euler(0, 0, -swingAngle);
 
         while (elapsed < 1f / swingSpeed)
         {
@@ -60,8 +60,14 @@ public class MeleeWeapon : WeaponBase
 
     void DealDamage()
     {
+        // use camera forward direction for attack center
+        Camera cam = Camera.main;
+        Vector3 attackCenter = cam != null ?
+            cam.transform.position + cam.transform.forward * attackRange :
+            transform.position;
+
         Collider[] hits = Physics.OverlapSphere(
-            transform.position,
+            attackCenter,
             attackRange,
             enemyLayer
         );

@@ -185,8 +185,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4194304000
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0.98039216}
+    rgba: 4210503178
+  m_fontColor: {r: 0.039594777, g: 0.18233486, b: 0.9685534, a: 0.98039216}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -496,9 +496,9 @@ RectTransform:
   - {fileID: 224954621}
   m_Father: {fileID: 1162862965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -86, y: -103}
+  m_AnchorMin: {x: 0.37756047, y: 0.172}
+  m_AnchorMax: {x: 0.37756047, y: 0.172}
+  m_AnchoredPosition: {x: -1, y: -1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &739516068
@@ -704,9 +704,9 @@ RectTransform:
   - {fileID: 1736158543}
   m_Father: {fileID: 1162862965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 86, y: -102}
+  m_AnchorMin: {x: 0.62219757, y: 0.172}
+  m_AnchorMax: {x: 0.62219757, y: 0.172}
+  m_AnchoredPosition: {x: 1, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1023211687
@@ -1224,8 +1224,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281874488
-  m_fontColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+    rgba: 4294066445
+  m_fontColor: {r: 0.050769284, g: 0.25661218, b: 0.9496855, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1327,9 +1327,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1162862965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.6781, y: -64}
+  m_AnchorMin: {x: 0.5, y: 0.2977846}
+  m_AnchorMax: {x: 0.5, y: 0.2977846}
+  m_AnchoredPosition: {x: -2.6781006, y: -1}
   m_SizeDelta: {x: 439.36, y: 40.8152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2100443049

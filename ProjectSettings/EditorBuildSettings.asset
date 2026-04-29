@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Legend.unity
     guid: f091f4e1a6d32524eaa8e4f96817abcf
   - enabled: 1
+    path: Assets/Scenes/LevelSelection.unity
+    guid: fd9e1cfd8351e104ca367c90fb2d4714
+  - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 080f624d6ec482b4eb038b872e257015
   - enabled: 1
